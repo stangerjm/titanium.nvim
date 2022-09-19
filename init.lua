@@ -17,3 +17,4 @@ vim.o.smartcase = true
 
 -- Show number lines
 vim.o.number = true
+vim.o.relativenumber = true

@@ -10,4 +10,14 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+	use {
+		'folke/tokyonight.nvim',
+		config = require('config/theme')
+	}
+
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+		config = require('config/treesitter'),
+	}
 end)
