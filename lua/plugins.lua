@@ -5,28 +5,39 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
+	-- package manager
 	use 'wbthomason/packer.nvim'
 
+	-- file exploration
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		requires = { {'nvim-lua/plenary.nvim'} },
 	}
 
+	-- theme
 	use {
 		'folke/tokyonight.nvim',
 		config = function() require('config/theme') end,
 	}
 
+	-- syntax highlighting
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 		config = function() require('config/treesitter') end,
 	}
 
+	-- statusline and tabline
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 		config = function() require('config/lualine') end,
+	}
+
+	-- comment toggler
+	use {
+		'numToStr/Comment.nvim',
+		config = function() require('config/comment') end,
 	}
 	
 	if packer_bootstrap then

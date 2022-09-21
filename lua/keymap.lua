@@ -1,3 +1,4 @@
+-- helper function for mapping keys
 local function map(args)
   local key = args.key or nil
   local cmd = args.cmd or nil
@@ -6,7 +7,7 @@ local function map(args)
   vim.api.nvim_set_keymap(mode, key, cmd, options)
 end
 
--- map spacebar to leader
+-- Map spacebar to leader
 vim.g.mapleader = ' '
 map{ key = '<Space>', cmd = '', options = {} }
 map{ mode = 'v', key = '<Space>', cmd = '', options = {} }
@@ -25,8 +26,13 @@ map{ key = '<C-p>', cmd = '<cmd>Telescope find_files<cr>' }
 -- Map the ',' key to a command that clears the previous search
 map{ mode = '', key = ',', cmd = ':let @/=""<CR>' }
 
--- map <leader> + movement keys to change windows
+-- Map <leader> + movement keys to change windows
 map{ key = '<leader>l', cmd = '<C-w>l' }
 map{ key = '<leader>k', cmd = '<C-w>k' }
 map{ key = '<leader>j', cmd = '<C-w>j' }
 map{ key = '<leader>h', cmd = '<C-w>h' }
+
+-- Map <leader> + c to toggle comments
+map{ key = '<leader>c', cmd = '<Plug>(comment_toggle_linewise)' }
+map{ key = '<leader>cc', cmd = '<Plug>(comment_toggle_linewise_current)' }
+map{ mode = 'x', key = '<leader>c', cmd = '<Plug>(comment_toggle_linewise_visual)' }
