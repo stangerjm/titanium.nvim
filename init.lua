@@ -18,3 +18,7 @@ vim.o.smartcase = true
 -- Show number lines
 vim.o.number = true
 vim.o.relativenumber = true
+
+-- persistent undo
+vim.opt.undodir = vim.fn.stdpath('config') .. '/undo'
+vim.o.undofile = true
