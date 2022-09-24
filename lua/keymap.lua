@@ -32,7 +32,16 @@ map{ key = '<leader>k', cmd = '<C-w>k' }
 map{ key = '<leader>j', cmd = '<C-w>j' }
 map{ key = '<leader>h', cmd = '<C-w>h' }
 
--- Map <leader> + c to toggle comments
+-- Toggle comments
 map{ key = '<leader>c', cmd = '<Plug>(comment_toggle_linewise)' }
 map{ key = '<leader>cc', cmd = '<Plug>(comment_toggle_linewise_current)' }
 map{ mode = 'x', key = '<leader>c', cmd = '<Plug>(comment_toggle_linewise_visual)' }
+
+-- Git blame
+map{ key = '<leader>b', cmd = ':Gitsigns toggle_current_line_blame<CR>' }
+
+-- Git diff
+map{ key = '<leader>d', cmd = ':DiffviewOpen<CR>' }
+
+-- Quick close tab
+map{ key = '<leader>q', cmd = ':tabclose<CR>' }

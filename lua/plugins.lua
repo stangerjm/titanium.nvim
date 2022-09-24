@@ -39,7 +39,18 @@ return require('packer').startup(function(use)
 		'numToStr/Comment.nvim',
 		config = function() require('config/comment') end,
 	}
-	
+
+	-- git integration
+	use {
+		'lewis6991/gitsigns.nvim',
+		config = function() require('config/git') end,
+	}
+
+	use {
+		'sindrets/diffview.nvim',
+		requires = 'nvim-lua/plenary.nvim',
+	}
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end
