@@ -75,6 +75,13 @@ return require('packer').startup(function(use)
 		config = function() require('config/completion') end,
 	}
 
+	-- test runner
+  use {
+    'vim-test/vim-test',
+    config = function () require('config/test-runner') end,
+  }
+
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end

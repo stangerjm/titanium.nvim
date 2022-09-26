@@ -49,3 +49,8 @@ map{ key = '<leader>q', cmd = ':tabclose<CR>' }
 -- Quick zooming windows
 map{ key = '<leader>z', cmd = '<C-w>|' }
 map{ key = '<leader>o', cmd = '<C-w>=' }
+
+-- Running tests
+map{ key = '<leader>g', cmd = ':TestFile<CR>' }
+map{ key = '<leader>n', cmd = ':TestNearest<CR>' }
+map{ mode='t', key = '<C-o>', cmd = '<C-\\><C-n>' }

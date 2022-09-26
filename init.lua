@@ -22,3 +22,12 @@ vim.o.relativenumber = true
 -- persistent undo
 vim.opt.undodir = vim.fn.stdpath('config') .. '/undo'
 vim.o.undofile = true
+
+-- Indentation
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.autoindent = true
+vim.o.shiftround = true
+vim.o.smarttab = true
