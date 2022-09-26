@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
 	-- statusline and tabline
 	use {
 		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+		requires = { 'kyazdani42/nvim-web-devicons' },
 		config = function() require('config/lualine') end,
 	}
 
@@ -48,7 +48,31 @@ return require('packer').startup(function(use)
 
 	use {
 		'sindrets/diffview.nvim',
-		requires = 'nvim-lua/plenary.nvim',
+		requires = {
+			{ 'kyazdani42/nvim-web-devicons' },
+			{ 'nvim-lua/plenary.nvim' },
+		},
+	}
+
+	-- LSP
+	use {
+		'neovim/nvim-lspconfig',
+		config = function() require('config/lsp') end,
+	}
+
+	-- Completion
+	use {
+		'hrsh7th/nvim-cmp',
+		requires = {
+			{ 'L3MON4D3/LuaSnip' },
+			{ 'saadparwaiz1/cmp_luasnip' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-path' },
+			{ 'hrsh7th/cmp-cmdline' },
+			{ 'onsails/lspkind.nvim' },
+		},
+		config = function() require('config/completion') end,
 	}
 
 	if packer_bootstrap then
