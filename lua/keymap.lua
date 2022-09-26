@@ -45,3 +45,7 @@ map{ key = '<leader>d', cmd = ':DiffviewOpen<CR>' }
 
 -- Quick close tab
 map{ key = '<leader>q', cmd = ':tabclose<CR>' }
+
+-- Quick zooming windows
+map{ key = '<leader>z', cmd = '<C-w>|' }
+map{ key = '<leader>o', cmd = '<C-w>=' }
