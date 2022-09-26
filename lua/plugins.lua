@@ -5,42 +5,42 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-	-- package manager
+	-- Package manager
 	use 'wbthomason/packer.nvim'
 
-	-- file exploration
+	-- File exploration
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		requires = { {'nvim-lua/plenary.nvim'} },
 	}
 
-	-- theme
+	-- Theme
 	use {
 		'folke/tokyonight.nvim',
 		config = function() require('config/theme') end,
 	}
 
-	-- syntax highlighting
+	-- Syntax highlighting
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 		config = function() require('config/treesitter') end,
 	}
 
-	-- statusline and tabline
+	-- Statusline and tabline
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons' },
 		config = function() require('config/lualine') end,
 	}
 
-	-- comment toggler
+	-- Comment toggler
 	use {
 		'numToStr/Comment.nvim',
 		config = function() require('config/comment') end,
 	}
 
-	-- git integration
+	-- Git integration
 	use {
 		'lewis6991/gitsigns.nvim',
 		config = function() require('config/git') end,
@@ -75,10 +75,16 @@ return require('packer').startup(function(use)
 		config = function() require('config/completion') end,
 	}
 
-	-- test runner
+	-- Test runner
   use {
     'vim-test/vim-test',
     config = function () require('config/test-runner') end,
+  }
+
+  -- Floating terminal
+  use {
+    'akinsho/toggleterm.nvim',
+    config = function () require('config/terminal') end
   }
 
 

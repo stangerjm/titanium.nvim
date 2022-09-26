@@ -54,3 +54,6 @@ map{ key = '<leader>o', cmd = '<C-w>=' }
 map{ key = '<leader>g', cmd = ':TestFile<CR>' }
 map{ key = '<leader>n', cmd = ':TestNearest<CR>' }
 map{ mode='t', key = '<C-o>', cmd = '<C-\\><C-n>' }
+
+-- Open terminal
+map{ key = '<leader>t', cmd = ':ToggleTerm<CR>' }
