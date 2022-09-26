@@ -48,13 +48,13 @@ local linters = {
 
 -- congigure border around window
 local border = {
-  { "┌", "FloatBorder" },
+  { "╭", "FloatBorder" },
   { "─", "FloatBorder" },
-  { "┐", "FloatBorder" },
+  { "╮",  "FloatBorder" },
   { "│", "FloatBorder" },
-  { "┘", "FloatBorder" },
+  { "╯", "FloatBorder" },
   { "─", "FloatBorder" },
-  { "└", "FloatBorder" },
+  { "╰", "FloatBorder" },
   { "│", "FloatBorder" },
 }
 

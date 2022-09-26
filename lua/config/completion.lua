@@ -23,8 +23,12 @@ cmp.setup({
 		end,
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered{
+      winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+    },
+		documentation = cmp.config.window.bordered{
+      winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+    },
 	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-c>'] = cmp.mapping.complete(),
