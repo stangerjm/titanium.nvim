@@ -87,6 +87,15 @@ return require('packer').startup(function(use)
     config = function () require('config/terminal') end
   }
 
+  -- Auto-sizing for splits (with animations)
+  use {
+    'anuvyklack/windows.nvim',
+    requires = {
+      'anuvyklack/middleclass',
+      'anuvyklack/animation.nvim'
+    },
+    config = function() require('config/windows') end
+  }
 
 	if packer_bootstrap then
 		require('packer').sync()

@@ -47,8 +47,8 @@ map{ key = '<leader>d', cmd = ':DiffviewOpen<CR>' }
 map{ key = '<leader>q', cmd = ':tabclose<CR>' }
 
 -- Quick zooming windows
-map{ key = '<leader>z', cmd = '<C-w>|' }
-map{ key = '<leader>o', cmd = '<C-w>=' }
+map{ key = '<leader>z', cmd = ':WindowsMaximize<CR>' }
+map{ key = '<leader>o', cmd = ':WindowsEqualize<CR>' }
 
 -- Running tests
 map{ key = '<leader>g', cmd = ':TestFile<CR>' }
