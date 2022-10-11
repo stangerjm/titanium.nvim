@@ -32,6 +32,11 @@ vim.o.autoindent = true
 vim.o.shiftround = true
 vim.o.smarttab = true
 
+-- disable line wrap
+vim.wo.wrap = false
+vim.wo.linebreak = false
+vim.wo.list = false
+
 -- Add comment support for unknown files
 vim.cmd[[
   autocmd FileType sh setlocal commentstring=#\ %s

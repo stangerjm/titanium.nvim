@@ -42,6 +42,7 @@ map{ key = '<leader>b', cmd = ':Gitsigns toggle_current_line_blame<CR>' }
 
 -- Git diff
 map{ key = '<leader>d', cmd = ':DiffviewOpen<CR>' }
+map{ key = '<leader>s', cmd = ':DiffviewToggleFiles<CR>' }
 
 -- Quick close tab
 map{ key = '<leader>q', cmd = ':tabclose<CR>' }
