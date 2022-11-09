@@ -14,6 +14,11 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} },
 	}
 
+  use {
+    'nvim-telescope/telescope-file-browser.nvim',
+    config = function() require('config/file-browser') end,
+  }
+
 	-- Theme
 	use {
 		'folke/tokyonight.nvim',
@@ -85,16 +90,6 @@ return require('packer').startup(function(use)
   use {
     'akinsho/toggleterm.nvim',
     config = function () require('config/terminal') end
-  }
-
-  -- Auto-sizing for splits (with animations)
-  use {
-    'anuvyklack/windows.nvim',
-    requires = {
-      'anuvyklack/middleclass',
-      'anuvyklack/animation.nvim'
-    },
-    config = function() require('config/windows') end
   }
 
 	if packer_bootstrap then

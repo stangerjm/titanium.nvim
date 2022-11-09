@@ -20,7 +20,7 @@ map{ mode = 'v', key = '<leader>p', cmd = '"*p' }
 
 -- Telescope keybindings
 map{ key = '<leader>fg', cmd = '<cmd>Telescope live_grep<cr>' }
-map{ key = '<leader>fb', cmd = '<cmd>Telescope buffers<cr>' }
+map{ key = '<leader>fb', cmd = '<cmd>Telescope file_browser<cr>' }
 map{ key = '<C-p>', cmd = '<cmd>Telescope find_files<cr>' }
 
 -- Map the ',' key to a command that clears the previous search
@@ -48,8 +48,8 @@ map{ key = '<leader>s', cmd = ':DiffviewToggleFiles<CR>' }
 map{ key = '<leader>q', cmd = ':tabclose<CR>' }
 
 -- Quick zooming windows
-map{ key = '<leader>z', cmd = ':WindowsMaximize<CR>' }
-map{ key = '<leader>o', cmd = ':WindowsEqualize<CR>' }
+map{ key = '<leader>z', cmd = '<C-w>|' }
+map{ key = '<leader>o', cmd = '<C-w>=' }
 
 -- Running tests
 map{ key = '<leader>g', cmd = ':TestFile<CR>' }
