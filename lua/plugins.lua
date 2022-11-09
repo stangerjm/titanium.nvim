@@ -9,14 +9,15 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- File exploration
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		requires = { {'nvim-lua/plenary.nvim'} },
-	}
-
   use {
     'nvim-telescope/telescope-file-browser.nvim',
-    config = function() require('config/file-browser') end,
+    'nvim-telescope/telescope-ui-select.nvim',
+    {
+      'nvim-telescope/telescope.nvim',
+      tag = '0.1.0',
+      requires = { 'nvim-lua/plenary.nvim' },
+      config = function() require('config/telescope') end,
+    },
   }
 
 	-- Theme
