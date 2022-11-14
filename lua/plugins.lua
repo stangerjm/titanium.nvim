@@ -49,15 +49,14 @@ return require('packer').startup(function(use)
 	-- Git integration
 	use {
 		'lewis6991/gitsigns.nvim',
-		config = function() require('config/git') end,
-	}
-
-	use {
-		'sindrets/diffview.nvim',
-		requires = {
-			{ 'kyazdani42/nvim-web-devicons' },
-			{ 'nvim-lua/plenary.nvim' },
-		},
+    {
+      'sindrets/diffview.nvim',
+      requires = {
+        { 'kyazdani42/nvim-web-devicons' },
+        { 'nvim-lua/plenary.nvim' },
+      },
+      config = function () require('config/git') end,
+    },
 	}
 
 	-- LSP
