@@ -19,6 +19,8 @@ return require('lazy').setup({
 		build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 		init = function() require('config/treesitter') end,
 	},
+  'windwp/nvim-ts-autotag',
+  'RRethy/nvim-treesitter-endwise',
 	-- Statusline and tabline
 	{
 		'nvim-lualine/lualine.nvim',
@@ -69,4 +71,9 @@ return require('lazy').setup({
     'akinsho/toggleterm.nvim',
     init = function () require('config/terminal') end
   },
+  -- Autopair
+  {
+    'windwp/nvim-autopairs',
+    init = function () require('config/autopairs') end
+  }
 })
