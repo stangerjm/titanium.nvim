@@ -32,6 +32,12 @@ map{ key = '<leader>k', cmd = '<C-w>k' }
 map{ key = '<leader>j', cmd = '<C-w>j' }
 map{ key = '<leader>h', cmd = '<C-w>h' }
 
+-- Map <leader> + m + movement key to move a split directionally
+map{ key = '<leader>ml', cmd = '<C-w>L' }
+map{ key = '<leader>mk', cmd = '<C-w>K' }
+map{ key = '<leader>mj', cmd = '<C-w>J' }
+map{ key = '<leader>mh', cmd = '<C-w>H' }
+
 -- Toggle comments
 map{ key = '<leader>c', cmd = '<Plug>(comment_toggle_linewise)' }
 map{ key = '<leader>cc', cmd = '<Plug>(comment_toggle_linewise_current)' }
