@@ -85,24 +85,29 @@ local on_attach = function(_, bufnr)
   end, bufopts)
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Typescript
 lsp['tsserver'].setup {
   on_attach = on_attach,
-  flags = lsp_flags,
+  capabilities = capabilities,
+}
+
+lsp['volar'].setup {
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+  on_attach = on_attach,
   capabilities = capabilities,
 }
 
 -- Lua
 lsp['lua_ls'].setup {
   on_attach = on_attach,
-  flags = lsp_flags,
+  capabilities = capabilities,
+}
+
+-- Ruby
+lsp['solargraph'].setup {
+  on_attach = on_attach,
   capabilities = capabilities,
 }
 
