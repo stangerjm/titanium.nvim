@@ -11,42 +11,6 @@ end, opts)
 -- show all diagnostics
 vim.keymap.set('n', '<space>E', telescope.diagnostics, opts)
 
-local filetypes = {
-  javascript = "eslint",
-  typescript = "eslint",
-  typescriptreact = "eslint",
-}
-
-local linters = {
-  eslint = {
-    sourceName = "eslint",
-    command = "eslint_d",
-    rootPatterns = {
-      ".eslintrc.js",
-      "package.json",
-      ".git"
-    },
-    debounce = 100,
-    args = {
-      "--stdin",
-      "--stdin-filename",
-      "%filepath",
-      "--format",
-      "json"
-    },
-    parseJson = {
-      errorsRoot = "[0].messages",
-      line = "line",
-      column = "column",
-      endLine = "endLine",
-      endColumn = "endColumn",
-      message = "${message} [${ruleId}]",
-      security = "severity"
-    },
-    securities = { [2] = "error", [1] = "warning" }
-  }
-}
-
 -- congigure border around window
 local border = {
   { "╭", "FloatBorder" },
@@ -111,11 +75,12 @@ lsp['solargraph'].setup {
   capabilities = capabilities,
 }
 
--- Linters (ESLint)
-lsp['diagnosticls'].setup {
-  filetypes = vim.tbl_keys(filetypes),
-  init_options = {
-    filetypes = filetypes,
-    linters = linters,
-  },
+-- ESLint
+lsp['eslint'].setup {
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      buffer = bufnr,
+      command = 'EslintFixAll',
+    })
+  end,
 }
