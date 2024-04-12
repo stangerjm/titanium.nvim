@@ -51,6 +51,9 @@ vim.wo.wrap = false
 vim.wo.linebreak = false
 vim.wo.list = false
 
+-- disable mouse
+vim.opt.mouse = ""
+
 -- Add comment support for unknown files
 vim.cmd[[
   autocmd FileType sh setlocal commentstring=#\ %s
