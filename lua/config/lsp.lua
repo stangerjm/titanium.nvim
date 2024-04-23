@@ -51,12 +51,7 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- Typescript
-lsp['tsserver'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
+-- Typescript and Vue (volar can handle TypeScript and even JSX/TSX)
 lsp['volar'].setup {
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
   on_attach = on_attach,
