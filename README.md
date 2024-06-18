@@ -11,7 +11,7 @@ git clone https://github.com/stangerjm/titanium.nvim.git ~/.config/nvim
 ```
 
 You will need to install NodeJS and some other dependencies:
-* `npm install -g typescript typescript-language-server @vue/language-server eslint_d vscode-langservers-extracted neovim`
+* `npm install -g typescript typescript-language-server @vue/language-server @vue/typescript-plugin eslint_d vscode-langservers-extracted@4.8.0 neovim`
 
 If you want to use Ruby, you will need to install Ruby and Solargraph.
 * https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
