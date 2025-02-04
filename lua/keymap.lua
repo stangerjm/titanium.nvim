@@ -64,3 +64,6 @@ map{ mode='t', key = '<C-o>', cmd = '<C-\\><C-n>' }
 
 -- Open terminal
 map{ key = '<leader>t', cmd = ':ToggleTerm<CR>' }
+
+-- Undo
+map{ key = '<leader>u', cmd = '<cmd>Telescope undo<CR>' }

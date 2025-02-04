@@ -52,22 +52,8 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Typescript
-lsp['tsserver'].setup {
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'json', 'vue'},
-  on_attach = on_attach,
-  capabilities = capabilities,
-  init_options = {
-    plugins = {
-      {
-        name = '@vue/typescript-plugin',
-        location = "/usr/lib/node_modules/@vue/typescript-plugin",
-        languages = { 'javascript', 'typescript', 'vue' },
-      },
-    },
-  },
-}
-
-lsp['volar'].setup {
+lsp['ts_ls'].setup {
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'json'},
   on_attach = on_attach,
   capabilities = capabilities,
 }

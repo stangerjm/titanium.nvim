@@ -2,6 +2,7 @@ return require('lazy').setup({
 	-- File exploration
   'nvim-telescope/telescope-file-browser.nvim',
   'nvim-telescope/telescope-ui-select.nvim',
+  'debugloop/telescope-undo.nvim',
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
