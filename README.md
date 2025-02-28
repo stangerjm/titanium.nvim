@@ -16,6 +16,12 @@ You will need to install NodeJS and some other dependencies:
 If you want to use Ruby, you will need to install Ruby and Solargraph.
 * https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
 
+If some JavaScript/TypeScript integrations are not working, you may need to set an environment variable. See the Environment Variables section below.
+
+## Environment Variables
+Some plugins require a location of plugins installed via NPM. If your global node_modules directory is in `/usr/lib` this config will work fine.
+Otherwise just set an environment variable called `GLOBAL_NODE_MODULES` to the path of npm's global node_modules directory.
+
 ## Keymap
 **Leader**  
 leader = `<Space>`  

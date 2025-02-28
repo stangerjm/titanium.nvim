@@ -1,5 +1,6 @@
 local lsp = require('lspconfig')
 local telescope = require('telescope.builtin')
+local variables = require('variables');
 local opts = { noremap = true, silent = true }
 
 -- go to next error
@@ -53,9 +54,18 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Typescript
 lsp['ts_ls'].setup {
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'json'},
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'json', 'vue'},
   on_attach = on_attach,
   capabilities = capabilities,
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = variables.node_modules_dir .. '@vue/typescript-plugin',
+        languages = { 'javascript', 'typescript', 'vue' },
+      }
+    },
+  },
 }
 
 -- Lua
