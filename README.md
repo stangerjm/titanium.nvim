@@ -13,8 +13,12 @@ git clone https://github.com/stangerjm/titanium.nvim.git ~/.config/nvim
 You will need to install NodeJS and some other dependencies:
 * `npm install -g typescript typescript-language-server @vue/language-server @vue/typescript-plugin eslint_d vscode-langservers-extracted@4.8.0 neovim`
 
+You will need to install `ripgrep` for project-wide search. See [installation guilde](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation)
+
 If you want to use Ruby, you will need to install Ruby and Solargraph.
 * https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
+
+If you want to use Lua, you will need to install [lua_ls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls)
 
 If some JavaScript/TypeScript integrations are not working, you may need to set an environment variable. See the Environment Variables section below.
 

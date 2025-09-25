@@ -1,10 +1,8 @@
 -- helper function for mapping keys
 local function map(args)
-  local key = args.key or nil
-  local cmd = args.cmd or nil
   local mode = args.mode or 'n'
   local options = args.options or { noremap = true }
-  vim.api.nvim_set_keymap(mode, key, cmd, options)
+  vim.api.nvim_set_keymap(mode, args.key, args.cmd, options)
 end
 
 -- Map spacebar to leader
@@ -13,10 +11,10 @@ map{ key = '<Space>', cmd = '', options = {} }
 map{ mode = 'v', key = '<Space>', cmd = '', options = {} }
 
 -- Copy/paste helpers
-map{ key = '<leader>y', cmd = '"*y' }
-map{ mode = 'v', key = '<leader>y', cmd = '"*y' }
-map{ key = '<leader>p', cmd = '"*p' }
-map{ mode = 'v', key = '<leader>p', cmd = '"*p' }
+map{ key = '<leader>y', cmd = '"+y' }
+map{ mode = 'v', key = '<leader>y', cmd = '"+y' }
+map{ key = '<leader>p', cmd = '"+p' }
+map{ mode = 'v', key = '<leader>p', cmd = '"+p' }
 
 -- Telescope keybindings
 map{ key = '<leader>fg', cmd = '<cmd>Telescope live_grep<cr>' }
