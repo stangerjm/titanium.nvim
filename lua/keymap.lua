@@ -16,6 +16,10 @@ map{ mode = 'v', key = '<leader>y', cmd = '"+y' }
 map{ key = '<leader>p', cmd = '"+p' }
 map{ mode = 'v', key = '<leader>p', cmd = '"+p' }
 
+-- Copy current file path (relative to where you opened nvim)
+map{ key = 'yp', cmd = ':let @" = expand("%")<cr>' }
+map{ key = '<leader>yp', cmd = ':let @+ = expand("%")<cr>' }
+
 -- Telescope keybindings
 map{ key = '<leader>fg', cmd = '<cmd>Telescope live_grep<cr>' }
 map{ key = '<leader>fb', cmd = '<cmd>Telescope file_browser<cr>' }
