@@ -22,7 +22,8 @@ map{ key = '<leader>yp', cmd = ':let @+ = expand("%")<cr>' }
 
 -- Telescope keybindings
 map{ key = '<leader>fg', cmd = '<cmd>Telescope live_grep<cr>' }
-map{ key = '<leader>fb', cmd = '<cmd>Telescope file_browser<cr>' }
+map{ key = '<leader>fb', cmd = '<cmd>Telescope buffers<cr>' }
+map{ key = '<leader>ff', cmd = '<cmd>Telescope file_browser<cr>' }
 map{ key = '<C-p>', cmd = '<cmd>Telescope find_files<cr>' }
 
 -- Map the ',' key to a command that clears the previous search
