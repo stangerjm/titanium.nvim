@@ -29,6 +29,10 @@ map{ key = '<C-p>', cmd = '<cmd>Telescope find_files<cr>' }
 -- Map the ',' key to a command that clears the previous search
 map{ mode = '', key = ',', cmd = ':let @/=""<CR>' }
 
+-- Map <C-j> and <C-k> to scroll the window without moving the cursor
+map{ key = '<C-j>', cmd = '<C-e>' }
+map{ key = '<C-k>', cmd = '<C-y>' }
+
 -- Map <leader> + movement keys to change windows
 map{ key = '<leader>l', cmd = '<C-w>l' }
 map{ key = '<leader>k', cmd = '<C-w>k' }
