@@ -75,3 +75,6 @@ map{ key = '<leader>t', cmd = ':ToggleTerm<CR>' }
 
 -- Undo
 map{ key = '<leader>u', cmd = '<cmd>Telescope undo<CR>' }
+
+-- CodeCompanion
+map{ key = '<leader>C', cmd = ':CodeCompanionChat<CR>' }

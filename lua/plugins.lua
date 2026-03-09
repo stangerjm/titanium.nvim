@@ -75,5 +75,30 @@ return require('lazy').setup({
   {
     'windwp/nvim-autopairs',
     init = function () require('config/autopairs') end
+  },
+  -- AI agent integration
+  {
+    "olimorris/codecompanion.nvim",
+    version = "^19.0.0",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      interactions = {
+        chat = {
+          adapter = "kiro",
+        },
+      },
+    },
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {
+      file_types = { 'markdown', 'codecompanion' },
+    },
   }
 })
