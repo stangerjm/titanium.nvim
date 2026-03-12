@@ -83,12 +83,16 @@ return require('lazy').setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "franco-ruggeri/codecompanion-spinner.nvim",
     },
     opts = {
       interactions = {
         chat = {
           adapter = "kiro",
         },
+      },
+      extensions = {
+        spinner = {},
       },
     },
   },
