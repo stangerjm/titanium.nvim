@@ -33,6 +33,10 @@ map{ mode = '', key = ',', cmd = ':let @/=""<CR>' }
 map{ key = '<C-j>', cmd = '<C-e>' }
 map{ key = '<C-k>', cmd = '<C-y>' }
 
+-- Map movement up and down keys to navigate visual lines rather than actual lines
+map { key = 'j', cmd = 'gj' }
+map { key = 'k', cmd = 'gk' }
+
 -- Map <leader> + movement keys to change windows
 map{ key = '<leader>l', cmd = '<C-w>l' }
 map{ key = '<leader>k', cmd = '<C-w>k' }

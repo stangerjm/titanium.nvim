@@ -1,7 +1,6 @@
 -- Set up nvim-cmp.
 local cmp = require('cmp')
 local lspkind = require('lspkind')
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 cmp.setup({
   formatting = {
@@ -44,11 +43,6 @@ cmp.setup({
 		{ name = 'buffer' },
 	})
 })
-
-cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
-)
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 for _,v in pairs({ '/', '?' }) do
