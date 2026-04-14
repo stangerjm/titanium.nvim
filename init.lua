@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('plugins')
 require('keymap')
+require('config/lsp')
 
 -- Set tab to two spaces
 vim.o.tabstop = 2

@@ -49,10 +49,10 @@ map{ key = '<leader>mk', cmd = '<C-w>K' }
 map{ key = '<leader>mj', cmd = '<C-w>J' }
 map{ key = '<leader>mh', cmd = '<C-w>H' }
 
--- Toggle comments
-map{ key = '<leader>c', cmd = '<Plug>(comment_toggle_linewise)' }
-map{ key = '<leader>cc', cmd = '<Plug>(comment_toggle_linewise_current)' }
-map{ mode = 'x', key = '<leader>c', cmd = '<Plug>(comment_toggle_linewise_visual)' }
+-- Toggle comments (native gc)
+vim.keymap.set('n', '<leader>c', 'gc', { remap = true })
+vim.keymap.set('n', '<leader>cc', 'gcc', { remap = true })
+vim.keymap.set('x', '<leader>c', 'gc', { remap = true })
 
 -- Git blame
 map{ key = '<leader>b', cmd = ':Gitsigns toggle_current_line_blame<CR>' }
@@ -75,7 +75,7 @@ map{ key = '<leader>n', cmd = ':TestNearest<CR>' }
 map{ mode='t', key = '<C-o>', cmd = '<C-\\><C-n>' }
 
 -- Open terminal
-map{ key = '<leader>t', cmd = ':ToggleTerm<CR>' }
+map{ key = '<leader>t', cmd = ':botright 15split | terminal<CR>' }
 
 -- Undo
 map{ key = '<leader>u', cmd = '<cmd>Telescope undo<CR>' }

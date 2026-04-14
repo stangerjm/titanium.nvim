@@ -16,20 +16,23 @@ return require('lazy').setup({
 	-- Syntax highlighting
 	{
 		'nvim-treesitter/nvim-treesitter',
-		build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-		init = function() require('config/treesitter') end,
+		lazy = false,
+		build = ':TSUpdate',
+		config = function()
+			require('nvim-treesitter').setup {}
+			vim.api.nvim_create_autocmd('FileType', {
+				callback = function()
+					pcall(vim.treesitter.start)
+				end,
+			})
+		end,
 	},
-  'RRethy/nvim-treesitter-endwise',
+
 	-- Statusline and tabline
 	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'kyazdani42/nvim-web-devicons' },
 		init = function() require('config/lualine') end,
-	},
-	-- Comment toggler
-	{
-		'numToStr/Comment.nvim',
-		init = function() require('config/comment') end,
 	},
 	-- Git integration
   'lewis6991/gitsigns.nvim',
@@ -41,34 +44,32 @@ return require('lazy').setup({
     },
     init = function () require('config/git') end,
   },
-	-- LSP
-	{
-		'neovim/nvim-lspconfig',
-		init = function() require('config/lsp') end,
-	},
-	-- Completion
-	{
-		'hrsh7th/nvim-cmp',
-		dependencies = {
-			'L3MON4D3/LuaSnip',
-			'saadparwaiz1/cmp_luasnip',
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-buffer',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-cmdline',
-			'onsails/lspkind.nvim',
-		},
-		init = function() require('config/completion') end,
-	},
 	-- Test runner
   {
     'vim-test/vim-test',
     init = function () require('config/test-runner') end,
   },
-  -- Floating terminal
+  -- Completion
   {
-    'akinsho/toggleterm.nvim',
-    init = function () require('config/terminal') end
+    'saghen/blink.cmp',
+    version = '1.*',
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      keymap = {
+        preset = 'default',
+        ['<Tab>'] = { 'select_next', 'fallback' },
+        ['<S-Tab>'] = { 'select_prev', 'fallback' },
+        ['<C-c>'] = { 'show' },
+      },
+      appearance = { nerd_font_variant = 'mono' },
+      completion = { documentation = { auto_show = true } },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'cmdline' },
+      },
+      fuzzy = { implementation = 'prefer_rust' },
+      cmdline = { completion = { menu = { auto_show = true } } },
+    },
   },
   -- AI agent integration
   {
@@ -78,6 +79,7 @@ return require('lazy').setup({
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "franco-ruggeri/codecompanion-spinner.nvim",
+      "ravitemer/codecompanion-history.nvim",
     },
     opts = {
       interactions = {
@@ -87,6 +89,14 @@ return require('lazy').setup({
       },
       extensions = {
         spinner = {},
+        history = {
+          enabled = true,
+          opts = {
+            auto_save = true,
+            auto_generate_title = false,
+            picker = "telescope",
+          },
+        },
       },
     },
   },
